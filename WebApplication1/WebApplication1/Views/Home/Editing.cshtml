@@ -1,0 +1,127 @@
+﻿
+
+<div class="descript flex_column">
+
+
+
+    @if(ViewBag.UserInfo != null)
+	{
+		@*int id,
+
+        string name,
+        string surname,
+        string lastName,
+        string Birthday,
+        string Email,
+        string password,
+        int IdRole,
+        int IdCommentAbout,
+        string commentAbout
+		*@
+
+
+		int id = ViewBag.UserInfo.IdUsers;
+		string name = ViewBag.UserInfo.Name;
+		string surname = ViewBag.UserInfo.Surname;
+		string lastName = ViewBag.UserInfo.Lastname;
+		string Birthday = ViewBag.UserInfo.Birthday.ToString("yyyy-MM-dd");
+		string Email = ViewBag.UserInfo.Email;
+		string Login = ViewBag.UserInfo.Login;
+		string password = ViewBag.UserInfo.Password;
+		int IdRole = ViewBag.UserInfo.IdRole;
+		int IdCommentAbout = ViewBag.UserInfo.IdCommentText;
+		string commentAbout = ViewBag.UserCommentAbout.Text;
+
+		<h1>Редактирование</h1>
+	<form asp-action=EditingProfile asp-controller="home" method="post">
+
+		<label for="id">Ваш номер в системе:</label>
+		<input type="email" id="email" name="id" value="@id" readonly ><br><br>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="Email" value="@Email" required><br><br>
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" value="@password" required><br><br>
+
+        <label for="name">Name:</label>
+		<input type="text" id="name" name="name" value="@name" required><br><br>
+
+        <label for="status">Status:</label>
+
+        <select name="IdRole" id="status">
+            <option value="2">Водитель</option>
+            <option value="1">Пассажир</option>
+        </select>
+
+		<label for="first_name">SurName:</label>
+		<input type="text" id="surname" name="surname" value="@surname" required><br><br>
+
+
+		<label for="patronymic">Patronymic:</label>
+		<input type="text" id="patronymic" value="@lastName" name="lastName"><br><br>
+
+		<label for="birthday">Birthday:</label>
+		<input type="date" id="birthday" value="@Birthday" name="Birthday" required><br><br>
+
+		<label for="birthday">Номер вашего комментария:</label>
+		<input type="text" id="birthday" value="@IdCommentAbout" name="IdCommentAbout" readonly><br><br>
+		
+
+		<label for="about_me">About me:</label>
+		<textarea id="about_me" name="commentAbout">@commentAbout</textarea><br><br>
+
+		<input type="submit" value="Сохранить">
+		</form>
+	}
+	else
+	{
+		@*string name,
+        string surname,
+        string lastName,
+        string Birthday,
+        string Email,
+        string password,
+        int IdRole,
+        string commentAbout,
+        decimal ecimation*@
+
+
+		<h1>Регистрация</h1>
+	<form asp-action=RegistrationForm asp-controller="home" method="post">
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="Email"  required><br><br>
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password"  required><br><br>
+
+        <label for="name">Name:</label>
+		<input type="text" id="name" name="name"  required><br><br>
+
+        <label for="status">Status:</label>
+        <select name="IdRole" id="status">
+            <option value="2">Водитель</option>
+            <option value="1">Пассажир</option>
+        </select>
+
+		<label for="first_name">SurName:</label>
+		<input type="text" id="surname" name="surname"  required><br><br>
+
+
+		<label for="patronymic">Patronymic:</label>
+		<input type="text" id="patronymic"  name="lastName"><br><br>
+
+		<label for="birthday">Birthday:</label>
+		<input type="date" id="birthday"  name="Birthday" required><br><br>
+
+		<label for="about_me">About me:</label>
+		<textarea id="about_me" name="commentAbout"></textarea><br><br>
+
+		
+
+		<input type="submit" value="Зарегистрироваться">
+		</form>
+	}
+
+
+</div>

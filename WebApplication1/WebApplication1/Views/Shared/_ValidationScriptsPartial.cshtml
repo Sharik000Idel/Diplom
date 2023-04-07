@@ -1,0 +1,29 @@
+﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="app.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                   
+                    <script
+                        src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/js/jquery.suggestions.min.js">
+                        </script>
+                    <script>
+                        $("#destination_start").suggestions({
+                            token: "8e34e1f82dca1ada6377a86b28a92b71d59e18d3",
+                            type: "ADDRESS",
+                            bounds: "city-settlement",
+                            onSelect: function (suggestion) {
+                                console.log(suggestion);
+                            }
+                        });
+                        $("#destination_end").suggestions({
+                            token: "8e34e1f82dca1ada6377a86b28a92b71d59e18d3",
+                            type: "ADDRESS" ,
+                            bounds: "city-settlement",
+                            onSelect: function (suggestion) {
+                                console.log(suggestion);
+                            }
+                        });
+                    </script>
+

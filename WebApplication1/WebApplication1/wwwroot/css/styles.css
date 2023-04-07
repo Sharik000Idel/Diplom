@@ -1,0 +1,327 @@
+/* Default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  header {
+    
+    
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem;
+  }
+  .head{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+  }
+
+  .logo{
+    color: #f9f9f9;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  nav ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+
+  
+  section {
+    margin-bottom: 2rem;
+  }
+  
+
+  
+  .hero {
+    text-align: center;
+    height: 500px;
+    background-image: url('https://cdn.oboi7.com/9c72a5672c253da85a4f5ee658e282a5d7529153/gory-oblaka-pejzazhi-priroda-lesa.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+  }
+  
+  
+  #destination_start, #destination_end, #date {
+    padding: 1rem;
+    margin: 0.2rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+ 
+  
+  input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #fff;
+    color: #333;
+  }
+
+  .border{
+    border:2px solid black;
+    border-radius: 20px;
+    border-style: double;
+  }
+
+  .trip{
+    margin-bottom: 20px;
+    
+  }
+
+  .tripp{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+
+.voditel_car{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+}
+.voditel{
+    display: flex;
+    align-items: center;
+}
+
+
+.flex_column{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.date{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date_sum{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.flex_row{
+    display: flex;
+    flex-direction: row;
+}
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  
+    form input[type="text"],
+    form input[type="date"],
+    form input[type="password"] ,
+    form input[type="email"],
+    textarea  {
+      padding: 0.5rem;
+      border-radius: 3px;
+      margin-right: 1rem;
+      width: 50%;
+    }
+    
+    form button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    
+    .about h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .about p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    
+    .testimonials h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .testimonials li {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .testimonials p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+    
+    .testimonials span {
+      font-weight: bold;
+    }
+    
+
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      header {
+        background-color: #4379b3;
+        color: #fff;
+        padding: 1rem;
+      }
+      
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      
+      nav li {
+        margin-left: 1rem;
+      }
+      
+      nav a {
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      main {
+        margin: 2rem auto;
+        width: 100%;
+        
+      }
+
+      
+      
+      .descript{
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+         
+
+      .profile {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .profile-picture {
+        flex: 0 0 200px;
+        margin-right: 2rem;
+      }
+      
+      .profile-picture img {
+        width: 100%;
+        border-radius: 50%;
+      }
+      
+      .profile-info {
+        flex: 1 1 0;
+        margin-bottom: 2rem;
+      }
+
+      .mini{
+        width: 100px;
+      }
+      
+      .profile h1 {
+        margin-top: 0;
+      }
+      
+      .profile h2 {
+        margin-top: 0;
+        font-size: 1.2rem;
+        font-weight: normal;
+      }
+      
+      .profile p {
+        line-height: 1.6;
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      
+      footer {
+        background-color: #ddd;
+        padding: 1rem;
+        text-align: center;
+      }
+      
+      

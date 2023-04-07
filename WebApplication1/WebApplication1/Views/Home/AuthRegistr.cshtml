@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Authorization";
+}
+
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset='utf-8' />
+        <title>METANIT.COM</title>
+    </head>
+    <body>
+        <div class="descript" >
+            
+        <h2>Авторизация</h2>
+        <form asp-action=LogIn asp-controller="home" method='post'>
+            <p>
+                <label>Email</label><br />
+                <input type='text' name='email' />
+            </p>
+            <p>
+                <label>Password</label><br />
+                <input type='password' name='password' />
+            </p>
+            <input type='submit' value='Вход' />
+        </form>
+
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Editing">Регистрация</a>
+        </div>
+    </body>
+    </html>

@@ -1,0 +1,70 @@
+﻿@model WebApplication1.Models.Data.User;
+
+
+
+
+<div>
+            <form  class="flex_row descript"  asp-action=Search asp-controller="home">
+                    <input type="text" name="BeginRoute" id="destination_start" placeholder="Откуда">
+                    <input type="text" name="EndRoute" id="destination_end" placeholder="Куда">
+                    <input type="date" name="date" id="date" placeholder="Выберите дату">
+                    <input type="submit" value="Поиск">
+                </form>
+        </div>
+
+        <div class="trips descript">
+            @{
+    if (ViewBag.routes == null){
+
+        <h2>Пусто</h2>
+} else{
+
+
+
+            @foreach (WebApplication1.Models.Data.Route item in ViewBag.routes)
+            {
+                
+
+                <a  href="" >
+                <div class="trip border">
+
+                    <div class="tripp">
+
+                        <div class="date_sum">
+                            <div class="date">
+                                <h3>@item.DataTimeStart.ToString("dd.MM hh:mm") @item.BeginRoute</h3>
+                                <p>↓</p>
+                                <h3> @item.EndRoute</h3>
+                            </div>
+                            <h1 class="sum">@item.Cost </h1>
+                        </div>
+
+                        <div class="voditel_car">
+
+                            <div class="voditel profile-picture mini">
+                                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Profile Picture">
+
+                                <div class="name_vod">
+                                <h2>@item.IdUserNavigation.Name</h2>
+                                    <p>Рейтинг: @item.IdUserNavigation.Estimation /10</p>
+                                </div>
+                            </div>
+                            <div class="car">
+                                <h3>Reno Logen</h3>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    
+                </div>
+
+            </a>
+            }
+
+
+             }
+        }
+
+        </div>
+       

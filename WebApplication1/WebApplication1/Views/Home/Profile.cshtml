@@ -1,0 +1,24 @@
+﻿@model WebApplication1.Models.Data.User
+
+
+<section class="profile">
+        <div class="profile-picture">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <h1>@ViewBag.UserInfo.Fulname</h1>
+            <h2>Возраст: @ViewBag.UserInfo.Age</h2>
+            <h2>Статус: @ViewBag.UserStatusInfo.Role1</h2>
+            <p>О себе: @ViewBag.UserCommentAbout.Text</p>
+          </div>
+      </section>
+      <section>
+        <nav>
+          <ul>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Mytrips">Мои поездки</a></li>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Reviews">Отзывы</a></li>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Editing">Редактрование</a></li>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="LogOut">Выйти из аккаунта</a></li>
+          </ul>
+        </nav>
+      </section>
