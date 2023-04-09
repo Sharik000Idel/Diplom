@@ -19,6 +19,11 @@
             <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Reviews">Отзывы</a></li>
             <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Editing">Редактрование</a></li>
             <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="LogOut">Выйти из аккаунта</a></li>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="CarAdd">Автомобиль</a></li>
+            @if (ViewBag.UserInfo.IdRole == 2)
+            {
+                 <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="NewRoute">Добавить путь</a></li>
+            }
           </ul>
         </nav>
       </section>

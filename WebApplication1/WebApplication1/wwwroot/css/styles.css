@@ -24,6 +24,12 @@
     align-items:center;
   }
 
+  .page{
+      display:flex;
+      flex-direction:column;
+      min-height: 100vh
+  }
+
   .logo{
     color: #f9f9f9;
   }
@@ -178,18 +184,20 @@
     font-size: 1.2rem;
     margin-bottom: 2rem;
   }
-  
-  
-    form input[type="text"],
-    form input[type="date"],
-    form input[type="password"] ,
-    form input[type="email"],
-    textarea  {
-      padding: 0.5rem;
-      border-radius: 3px;
-      margin-right: 1rem;
-      width: 50%;
-    }
+
+
+form input[type="text"],
+form input[type="date"],
+form input[type="password"],
+form input[type="email"],
+form input[type="number"],
+
+textarea {
+    padding: 0.5rem;
+    border-radius: 3px;
+    margin-right: 1rem;
+    width: 50%;
+}
     
     form button {
       background-color: #007bff;
@@ -322,6 +330,6 @@
         background-color: #ddd;
         padding: 1rem;
         text-align: center;
+        margin-top:auto;
       }
-      
-      
+

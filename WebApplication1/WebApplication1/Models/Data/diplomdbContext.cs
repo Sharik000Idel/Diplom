@@ -16,10 +16,13 @@ namespace WebApplication1.Models.Data
         {
         }
 
+        public virtual DbSet<Car> Cars { get; set; } = null!;
         public virtual DbSet<Comment> Comments { get; set; } = null!;
         public virtual DbSet<Commenttext> Commenttexts { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<Route> Routes { get; set; } = null!;
+        public virtual DbSet<Statususerroute> Statususerroutes { get; set; } = null!;
+        public virtual DbSet<Stausroute> Stausroutes { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<Userroute> Userroutes { get; set; } = null!;
 
@@ -37,6 +40,29 @@ namespace WebApplication1.Models.Data
             modelBuilder.UseCollation("utf8mb4_0900_ai_ci")
                 .HasCharSet("utf8mb4");
 
+            modelBuilder.Entity<Car>(entity =>
+            {
+                entity.HasKey(e => e.IdCar)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("car");
+
+                entity.HasIndex(e => e.IdCommentCar, "Car_commenttext_fk_idx");
+
+                entity.Property(e => e.IdCar)
+                    .ValueGeneratedNever()
+                    .HasColumnName("idCar");
+
+                entity.Property(e => e.GosNumber).HasMaxLength(45);
+
+                entity.Property(e => e.NameCar).HasMaxLength(45);
+
+                entity.HasOne(d => d.IdCommentCarNavigation)
+                    .WithMany(p => p.Cars)
+                    .HasForeignKey(d => d.IdCommentCar)
+                    .HasConstraintName("Car_commenttext_fk");
+            });
+
             modelBuilder.Entity<Comment>(entity =>
             {
                 entity.HasKey(e => e.IdComment)
@@ -45,6 +71,10 @@ namespace WebApplication1.Models.Data
                 entity.ToTable("comments");
 
                 entity.HasIndex(e => e.IdCommentText, "Comments_CommentText_FK_idx");
+
+                entity.HasIndex(e => e.IdUserComment, "IDuserComment_user_idx");
+
+                entity.HasIndex(e => e.IduserLeaveReview, "IDuserLR_user_idx");
 
                 entity.Property(e => e.IdComment)
                     .ValueGeneratedNever()
@@ -64,6 +94,16 @@ namespace WebApplication1.Models.Data
                     .WithMany(p => p.Comments)
                     .HasForeignKey(d => d.IdCommentText)
                     .HasConstraintName("Comments_CommentText_FK");
+
+                entity.HasOne(d => d.IdUserCommentNavigation)
+                    .WithMany(p => p.CommentIdUserCommentNavigations)
+                    .HasForeignKey(d => d.IdUserComment)
+                    .HasConstraintName("IDuserComment_user");
+
+                entity.HasOne(d => d.IduserLeaveReviewNavigation)
+                    .WithMany(p => p.CommentIduserLeaveReviewNavigations)
+                    .HasForeignKey(d => d.IduserLeaveReview)
+                    .HasConstraintName("IDuserLR_user");
             });
 
             modelBuilder.Entity<Commenttext>(entity =>
@@ -107,6 +147,8 @@ namespace WebApplication1.Models.Data
 
                 entity.HasIndex(e => e.IdUser, "Routes_user_idx");
 
+                entity.HasIndex(e => e.IdStatusRoute, "StatusRoute_idx");
+
                 entity.Property(e => e.IdRout)
                     .ValueGeneratedNever()
                     .HasColumnName("idRout");
@@ -130,11 +172,44 @@ namespace WebApplication1.Models.Data
                     .HasForeignKey(d => d.IdCommentText)
                     .HasConstraintName("Routes_CommentText");
 
+                entity.HasOne(d => d.IdStatusRouteNavigation)
+                    .WithMany(p => p.Routes)
+                    .HasForeignKey(d => d.IdStatusRoute)
+                    .HasConstraintName("StatusRoute");
+
                 entity.HasOne(d => d.IdUserNavigation)
                     .WithMany(p => p.Routes)
                     .HasForeignKey(d => d.IdUser)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Routes_user");
+            });
+
+            modelBuilder.Entity<Statususerroute>(entity =>
+            {
+                entity.HasKey(e => e.IdStatusUserRoute)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("statususerroute");
+
+                entity.Property(e => e.IdStatusUserRoute)
+                    .ValueGeneratedNever()
+                    .HasColumnName("idStatusUserRoute");
+
+                entity.Property(e => e.StatusUserRoutecol).HasMaxLength(45);
+            });
+
+            modelBuilder.Entity<Stausroute>(entity =>
+            {
+                entity.HasKey(e => e.IdStausRoute)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("stausroute");
+
+                entity.Property(e => e.IdStausRoute)
+                    .ValueGeneratedNever()
+                    .HasColumnName("idStausRoute");
+
+                entity.Property(e => e.StausRoutecol).HasMaxLength(45);
             });
 
             modelBuilder.Entity<User>(entity =>
@@ -143,6 +218,8 @@ namespace WebApplication1.Models.Data
                     .HasName("PRIMARY");
 
                 entity.ToTable("users");
+
+                entity.HasIndex(e => e.CarId, "UserCar_car_idx");
 
                 entity.HasIndex(e => e.IdCommentText, "Users_CommentText_idx");
 
@@ -172,6 +249,11 @@ namespace WebApplication1.Models.Data
 
                 entity.Property(e => e.Surname).HasMaxLength(45);
 
+                entity.HasOne(d => d.Car)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.CarId)
+                    .HasConstraintName("UserCar_car");
+
                 entity.HasOne(d => d.IdCommentTextNavigation)
                     .WithMany(p => p.Users)
                     .HasForeignKey(d => d.IdCommentText)
@@ -190,6 +272,8 @@ namespace WebApplication1.Models.Data
                     .HasName("PRIMARY");
 
                 entity.ToTable("userroutes");
+
+                entity.HasIndex(e => e.StatusUserRouteId, "StatusUserRoute_Status_idx");
 
                 entity.HasIndex(e => e.IdRout, "Userroutes_Routes_FK_idx");
 
@@ -214,6 +298,11 @@ namespace WebApplication1.Models.Data
                     .HasForeignKey(d => d.IdUser)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Userroutes_user_FK");
+
+                entity.HasOne(d => d.StatusUserRoute)
+                    .WithMany(p => p.Userroutes)
+                    .HasForeignKey(d => d.StatusUserRouteId)
+                    .HasConstraintName("StatusUserRoute_Status");
             });
 
             OnModelCreatingPartial(modelBuilder);

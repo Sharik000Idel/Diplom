@@ -16,10 +16,11 @@
                 <form asp-action=Search asp-controller="home">
                     <input type="text" name="BeginRoute" id="destination_start" placeholder="Откуда">
                     <input type="text" name="EndRoute" id="destination_end" placeholder="Куда">
-                    <input type="date" name="date" id="date" placeholder="Выберите дату">
+                    <input type="date" name="date" id="date" placeholder="Выберите дату" min="2023-01-01" max="2023-12-12" >
                     <input type="submit" value="Поиск">
                 </form>
             </div>
+            
         </section>
 
         <div class="descript">

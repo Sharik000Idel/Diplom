@@ -11,10 +11,8 @@ namespace WebApplication1.Models.Data
         }
 
         public int IdRole { get; set; }
-        public string Role1 { get; set; } 
+        public string Role1 { get; set; } = null!;
 
         public virtual ICollection<User> Users { get; set; }
-
-        public string Role2 { get { return Role1; }  }
     }
 }

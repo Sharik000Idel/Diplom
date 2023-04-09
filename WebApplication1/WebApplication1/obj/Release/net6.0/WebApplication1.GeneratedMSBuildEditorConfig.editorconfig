@@ -19,10 +19,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBdXRoUmVnaXN0ci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mr_sh/Desktop/папка Идель/Практика2/Diplom/NewAsp/WebApplication1/WebApplication1/Views/Home/CarAdd.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJBZGQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Mr_sh/Desktop/папка Идель/Практика2/Diplom/NewAsp/WebApplication1/WebApplication1/Views/Home/Editing.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -33,10 +29,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Mr_sh/Desktop/папка Идель/Практика2/Diplom/NewAsp/WebApplication1/WebApplication1/Views/Home/Mytrips.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeXRyaXBzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mr_sh/Desktop/папка Идель/Практика2/Diplom/NewAsp/WebApplication1/WebApplication1/Views/Home/NewRoute.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZXdSb3V0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mr_sh/Desktop/папка Идель/Практика2/Diplom/NewAsp/WebApplication1/WebApplication1/Views/Home/Privacy.cshtml]
@@ -53,10 +45,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Mr_sh/Desktop/папка Идель/Практика2/Diplom/NewAsp/WebApplication1/WebApplication1/Views/Home/Select.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWxlY3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mr_sh/Desktop/папка Идель/Практика2/Diplom/NewAsp/WebApplication1/WebApplication1/Views/Home/ViewingRoute.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3aW5nUm91dGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mr_sh/Desktop/папка Идель/Практика2/Diplom/NewAsp/WebApplication1/WebApplication1/Views/Shared/Error.cshtml]

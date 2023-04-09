@@ -1,5 +1,38 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model WebApplication1.Models.Data.Userroute;
+
+
+
+
+
+
+    <div class="trips descript">
+    <h1>Информация о поездках пользователя</h1>
+    @foreach(WebApplication1.Models.Data.Userroute item in ViewBag.userroutes)
+    {
+     <div class="trip border">
+        <div>
+            <label>ФИО водителя: </label>
+            <span>@item.IdRoutNavigation.IdUserNavigation.Fulname</span>
+        </div>
+        <div>
+            <label>ФИО пассажира: </label>
+            <span>@item.IdUserNavigation.Fulname</span>
+        </div>
+        <div>
+            <label>Дата и время начала поездки: </label>
+            <span>@item.IdRoutNavigation.DataTimeStart</span>
+        </div>
+        <div>
+            <label>Откуда: </label>
+            <span>@item.IdRoutNavigation.BeginRoute</span>
+        </div>
+        <div>
+            <label>Куда: </label>
+            <span>@item.IdRoutNavigation.EndRoute</span>
+        </div>
+        
+        <asp:Button runat="server" Text="Download PDF" OnClick="CreatePDF" />
+     </div>
+    }
+    </div>
+

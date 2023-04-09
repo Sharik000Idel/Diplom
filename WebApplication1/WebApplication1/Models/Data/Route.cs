@@ -17,8 +17,11 @@ namespace WebApplication1.Models.Data
         public DateTime DataTimeStart { get; set; }
         public int? Cost { get; set; }
         public int? IdCommentText { get; set; }
+        public int? CountPassagir { get; set; }
+        public int? IdStatusRoute { get; set; }
 
         public virtual Commenttext? IdCommentTextNavigation { get; set; }
+        public virtual Stausroute? IdStatusRouteNavigation { get; set; }
         public virtual User IdUserNavigation { get; set; } = null!;
         public virtual ICollection<Userroute> Userroutes { get; set; }
     }

@@ -13,5 +13,7 @@ namespace WebApplication1.Models.Data
         public DateOnly? Date { get; set; }
 
         public virtual Commenttext? IdCommentTextNavigation { get; set; }
+        public virtual User? IdUserCommentNavigation { get; set; }
+        public virtual User? IduserLeaveReviewNavigation { get; set; }
     }
 }

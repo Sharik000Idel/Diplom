@@ -2,7 +2,7 @@
 
 <div class="descript flex_column">
 
-
+	
 
     @if(ViewBag.UserInfo != null)
 	{
@@ -49,10 +49,21 @@
 
         <label for="status">Status:</label>
 
-        <select name="IdRole" id="status">
+			@if (IdRole==2)
+			{
+				<select name="IdRole" id="status">
             <option value="2">Водитель</option>
             <option value="1">Пассажир</option>
-        </select>
+				</select>
+			}
+			else
+			{
+				<select name="IdRole" id="status">
+					<option value="1">Пассажир</option>
+					<option value="2">Водитель</option>
+				</select>
+			}
+
 
 		<label for="first_name">SurName:</label>
 		<input type="text" id="surname" name="surname" value="@surname" required><br><br>
@@ -62,7 +73,7 @@
 		<input type="text" id="patronymic" value="@lastName" name="lastName"><br><br>
 
 		<label for="birthday">Birthday:</label>
-		<input type="date" id="birthday" value="@Birthday" name="Birthday" required><br><br>
+		<input type="date" id="birthday" value="@Birthday" name="Birthday" required max="2006-01-01"  ><br><br>
 
 		<label for="birthday">Номер вашего комментария:</label>
 		<input type="text" id="birthday" value="@IdCommentAbout" name="IdCommentAbout" readonly><br><br>
@@ -85,7 +96,9 @@
         int IdRole,
         string commentAbout,
         decimal ecimation*@
-
+		@if(ViewData["EmailTrue"]!=null){
+			<script>alert('Пользователь с таким Email есть')</script>
+		}
 
 		<h1>Регистрация</h1>
 	<form asp-action=RegistrationForm asp-controller="home" method="post">
@@ -112,7 +125,7 @@
 		<input type="text" id="patronymic"  name="lastName"><br><br>
 
 		<label for="birthday">Birthday:</label>
-		<input type="date" id="birthday"  name="Birthday" required><br><br>
+		<input type="date" id="birthday"  name="Birthday" required max="2006-01-01"><br><br>
 
 		<label for="about_me">About me:</label>
 		<textarea id="about_me" name="commentAbout"></textarea><br><br>
@@ -122,6 +135,6 @@
 		<input type="submit" value="Зарегистрироваться">
 		</form>
 	}
-
+	
 
 </div>

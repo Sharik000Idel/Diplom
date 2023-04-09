@@ -1,0 +1,42 @@
+﻿<div class="descript">
+
+
+@if (ViewBag.Car !=null){
+	<form asp-action=СhangeCarAdd asp-controller="home" method="post">
+
+		
+		<input type="hidden" id="email" name="id" value=@ViewBag.Car.IdCar readonly ><br><br>
+
+		<label for="GosNumber">Гос. номер:</label>
+		<input type="text" id="Gosnumber" name="Gosnumber" value=@ViewBag.Car.GosNumber required><br><br>
+
+		<label for="NameCar">Название автомобиля:</label>
+		<input type="text" id="Namecar" name="Namecar" value=@ViewBag.Car.NameCar required><br><br>
+
+
+		<input type="hidden" id="idtext" name="idtext" value=@ViewBag.Car.IdCommentCar readonly ><br><br>
+		<label for="textCar">Описание авто:</label>
+		<textarea id="textCar" name="textCar">@ViewBag.Car.IdCommentCarNavigation.Text</textarea><br><br>
+
+		<input type="submit" value="Сохранить">
+		</form>
+}else{
+	<form asp-action=NewCarAdd asp-controller="home" method="post">
+
+		
+		<input type="hidden" id="email" name="id" value="" readonly ><br><br>
+
+		<label for="GosNumber">Гос. номер:</label>
+		<input type="text" id="Gosnumber" name="Gosnumber" value="" required><br><br>
+
+		<label for="NameCar">Название автомобиля:</label>
+		<input type="text" id="Namecar" name="Namecar" value="" required><br><br>
+
+		<label for="textCar">Описание авто:</label>
+		<textarea id="textCar" name="textCar"></textarea><br><br>
+
+		<input type="submit" value="Сохранить">
+		</form>
+}
+
+</div>
